@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PAGE TITLE HERE | Jakob Gmoser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1><a href="index.html">Jakob Gmoser</a></h1>
+    <hr />
+    <h2>Oncharging Management</h2>
+    <div>
+      <label for="start">Invoice date:</label>
+      <input type="date" id="invoice-date" />
+
+      <label for="name">Invoice Sender:</label>
+      <input type="text" id="invoice-sender" />
+
+      <label for="invoice-recipient">Invoice Recipient:</label>
+      <select name="invoice-recipient" id="invoice-recipient">
+        <option value="BRO">BRO</option>
+        <option value="DS">DS</option>
+      </select>
+
+      <input type="checkbox" id="ordered" name="ordered" checked />
+      <label for="ordered">Ordered by BRO?</label>
+    </div>
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" />
+
+        <label for="currency">Currency:</label>
+        <select name="currency" id="currency">
+          <option value="EUR">EUR</option>
+          <option value="USD">USD</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+          <option value="People">People</option>
+          <option value="Infrastructure">Infrastructure</option>
+          <option value="Tax">Tax</option>
+          <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div>
+        <button onclick="newInvoice()" type="button">Save</button>
+    </div>
+
+    <footer>© 2023 Jakob Gmoser</footer>
+    <script src="oncharging.js"></script>
+  </body>
+</html>

@@ -14,3 +14,14 @@
     - store the values in an object
 - print values for current month
     - print object
+
+# What I learned this week
+- Basic Html
+- Basic CSS
+- JavaScript Syntax
+    - variables
+    - loops
+    - conditions
+    - TypeScript additions to JavaScript
+- Git and Github Basics
+- Set up my own server with a little webpage
