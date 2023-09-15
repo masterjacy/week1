@@ -14,14 +14,10 @@ function newInvoice() {
   var date = (<HTMLInputElement>document.getElementById("invoice-date")).value;
   var sender = (<HTMLInputElement>document.getElementById("invoice-sender"))
     .value;
-  var recipient = (<HTMLInputElement>(
-    document.getElementById("invoice-recipient")
-  )).value;
-  var element = <HTMLInputElement>document.getElementById("ordered");
-  var ordered = element.checked;
-  var amount = parseFloat(
-    (<HTMLInputElement>document.getElementById("amount")).value
-  );
+  var recipient = (<HTMLInputElement>(document.getElementById("invoice-recipient"))).value;
+  var orderedElement = <HTMLInputElement>document.getElementById("ordered");
+  var ordered = orderedElement.checked;
+  var amount = parseFloat((<HTMLInputElement>document.getElementById("amount")).value);
   var currency = (<HTMLInputElement>document.getElementById("currency")).value;
   var category = (<HTMLInputElement>document.getElementById("category")).value;
 
@@ -34,17 +30,27 @@ function newInvoice() {
     currency: currency,
     category: category,
   };
+  
   invoices.push(newInvoice);
-  console.log(invoices);
+  
+  var output = JSON.stringify(invoices, null, 4);
+
+  const invoicesElement = document.getElementById("invoices");
+  if (invoicesElement) {
+      invoicesElement.innerHTML = output;
+  } else {
+      console.error("Element with ID 'invoices' not found.");
+  }
+  
+  
 }
 
-function newMonth() {
-    //array of arrays
-    //put current array in the year array
-    //and create a fresh array for that month
+function sendToGSheets(newInvoice: invoice) {
+  //append a new row with the given invoice to GSheets
 }
 
 function getOnchargingPerMonth(month: string) {
+    //get data for current month from GSheets into an array
     //loop through array
     //if date === current month
         //if recipient === Brokkr 

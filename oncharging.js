@@ -19,7 +19,8 @@ function newInvoice() {
         category: category,
     };
     invoices.push(newInvoice);
-    console.log(invoices);
+    var output = JSON.stringify(invoices, null, 4);
+    document.getElementById("invoices").innerHTML = output;
 }
 function newMonth() {
     //array of arrays
